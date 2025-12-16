@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Natasya’s Personal Blog</title> <!-- Nama tab browser / Browser tab name -->
+
+  <style>
+    /* 🌸 GLOBAL SETTINGS 🌸 */
+    html, body {
+      height: 100%; /* Ambil tinggi penuh viewport / Full viewport height */
+      margin: 0; /* Buang margin default / Remove default margin */
+      padding: 0; /* Buang padding default / Remove default padding */
+      font-family: "Arial", sans-serif; /* Font utama laman / Main font */
+      display: flex; /* Gunakan flexbox untuk susunan child / Use flexbox for child layout */
+      flex-direction: column; /* Susun child vertical / Stack children vertically */
+      background-image: url("7a6d56c5-31dc-4eff-adcd-487f2ca8141c.png"); /* Gambar latar / Background image */
+      background-size: cover; /* Cover seluruh background / Cover entire background */
+      background-position: center; /* Letak di tengah / Center position */
+      background-attachment: fixed; /* Background tetap semasa scroll / Fixed during scroll */
+      color: #3a2067; /* Warna teks default / Default text color */
+    }
+
+    main {
+      flex: 1; /* Ambil ruang tinggal supaya footer sentiasa bawah / Take remaining space so footer stays at bottom */
+      width: 90%; /* Lebar content utama / Main content width */
+      max-width: 1150px; /* Maksimum lebar / Maximum width */
+      margin: 40px auto; /* Margin auto untuk center / Auto margin for centering */
+      padding: 40px; /* Padding dalam box utama / Padding inside main box */
+      background: rgba(255,255,255,0.45); /* Latar semi-transparan / Semi-transparent background */
+      backdrop-filter: blur(15px); /* Blur effect di belakang / Blur effect behind */
+      border-radius: 25px; /* Bulatkan sudut / Rounded corners */
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25); /* Shadow box / Box shadow */
+      display: flex;
+      flex-direction: column; /* Susun content vertical / Stack content vertically */
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      height: 30vh; /* Responsive ikut tinggi viewport / Responsive height based on viewport */
+      min-height: 260px; /* Minimum tinggi / Minimum height */
+      display: flex;
+      justify-content: center; /* Center horizontal / Horizontal center */
+      align-items: center; /* Center vertical / Vertical center */
+      background-image: url("header.jpg"); /* Gambar header / Header image */
+      background-size: cover; 
+      background-position: center;
+      background-color: rgba(0,0,0,0.35); /* Overlay gelap / Dark overlay */
+      background-blend-mode: darken; /* Gabung overlay & gambar / Blend overlay & image */
+      color: white; /* Warna teks / Text color */
+      font-size: 3vw; /* Responsive text / Responsive text size */
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 4px 14px rgba(0,0,0,0.8); /* Shadow teks / Text shadow */
+      border-bottom: 4px solid rgba(255,255,255,0.5); /* Garisan bawah / Bottom border */
+      padding: 20px; /* Ruang dalam header / Padding inside header */
+    }
+
+    /* ===== NAVBAR ===== */
+    nav ul {
+      list-style: none; /* Buang bullet list / Remove bullet points */
+      margin: 0;
+      padding: 14px; /* Padding navbar / Navbar padding */
+      background-color: #4B0082; /* Warna latar navbar / Navbar background color */
+      display: flex;
+      justify-content: center; /* Center menu items / Center links */
+      flex-wrap: wrap; /* Wrap jika ruang kurang / Wrap if space is small */
+    }
+
+    nav ul li a {
+      color: white; /* Warna teks link / Link text color */
+      text-decoration: none; /* Buang underline / Remove underline */
+      padding: 10px 16px; /* Padding button link / Button padding */
+      font-weight: bold;
+      border-radius: 12px; /*Rounded corners */
+      transition: 0.3s; /* Smooth hover effect / Smooth hover transition */
+    }
+
+    nav ul li a:hover {
+      background-color: #9370DB; /* Tukar warna bila hover / Change color on hover */
+    }
+
+    /* ===== GRID 3 COLUMNS ===== */
+    .grid-container {
+      display: grid; /* Grid layout untuk 3 kolum / Grid layout for 3 columns */
+      grid-template-columns: 1.8fr 3fr 1.8fr; /* Lebar kolum kiri-tengah-kanan / Column widths L-C-R */
+      gap: 25px; /* Ruang antara kolum / Gap between columns */
+      margin-bottom: 40px; /* Ruang sebelum bottom-single / Space before bottom box */
+    }
+
+    .box {
+      background: white; /* Latar putih / White background */
+      padding: 25px; /* Padding dalam box / Padding inside box */
+      border-radius: 20px; /* Bulatkan sudut / Rounded corners */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.18); /* Shadow box / Box shadow */
+      transition: 0.3s; /* Smooth hover / Smooth transition */
+      border: 1px solid rgba(200,200,255,0.4); /* Garisan border ringan / Light border */
+    }
+
+    .box:hover {
+      transform: translateY(-6px); /* Gerak naik sikit / Slight lift on hover */
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25); /* Shadow lebih besar / Bigger shadow */
+    }
+
+    .box h2 {
+      text-align: center; /* Center heading / Center text */
+      color: #5a2ea6; /* Warna teks heading / Heading color */
+      margin-bottom: 18px; /* Ruang bawah heading / Bottom margin */
+    }
+
+    ul li {
+      margin-bottom: 8px; /* Jarak antara list item / Spacing between list items */
+    }
+
+    /* ===== BOTTOM SINGLE ===== */
+    .bottom-single {
+      padding: 30px; /* Padding box / Box padding */
+      background: white; /* Latar putih / White background */
+      border-radius: 20px; /* Bulatkan sudut / Rounded corners */
+      text-align: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.2); /* Shadow box / Box shadow */
+      border: 1px solid rgba(200,200,255,0.45); /* Garisan border ringan / Light border */
+      transition: 0.3s;
+      width: 95%; /* Lebar box / Box width */
+      height: auto; /* Ikut content / Auto height */
+      min-height: 0; /* Hilangkan minimum tinggi / Remove min-height */
+    }
+
+    .bottom-single:hover {
+      transform: translateY(-6px); /* Hover effect naik / Lift on hover */
+      box-shadow: 0 8px 25px rgba(0,0,0,0.28); /* Shadow lebih besar / Bigger shadow */
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: rgba(100,0,160,0.8); /* Latar footer / Footer background */
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 1px; /* Spasi huruf / Letter spacing */
+    }
+
+    /* ===== BUTTON LINKS ===== */
+    .btn-link {
+      display: inline-block; /* Buat link seperti button / Make link like a button */
+      padding: 8px 16px;
+      margin: 4px 0;
+      background: #ff69b4; /* Warna button / Button color */
+      color: white;
+      text-decoration: none; /* Buang underline / Remove underline */
+      border-radius: 12px; /* Bulatkan sudut / Rounded corners */
+      transition: transform 0.2s, background 0.2s; /* Hover effect / Hover transition */
+      font-weight: bold;
+    }
+
+    .btn-link:hover {
+      background: #ff85c1; /* Tukar warna bila hover / Change color on hover */
+      transform: scale(1.05); /* Zoom sikit / Slight zoom */
+    }
+
+    .right-box ul {
+      list-style: none; /* Buang bullet / Remove bullets */
+      padding: 0;
+    }
+
+    .right-box ul li {
+      margin-bottom: 8px; /* Jarak antara item / Spacing between items */
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .grid-container {
+        grid-template-columns: 1fr 2fr 1fr; /* Susun semula kolum untuk tablet / Re-layout columns for tablet */
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr; /* Susun satu kolum untuk mobile / Single column for mobile */
+      }
+
+      header {
+        font-size: 8vw; /* Header lebih kecil untuk mobile / Smaller header for mobile */
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  🌸 NATASYA'S PERSONAL BLOG 🌸 <!-- Header blog / Blog header -->
+</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li> <!-- Link ke Home / Home page link -->
+    <li><a href="aboutme.html">About Me</a></li> <!-- Link ke About Me / About Me link -->
+    <li><a href="family.html">Family</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="friends.html">Friends</a></li>
+    <li><a href="favourites.html">Favourites</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+</nav>
+
+<main> <!-- Content utama laman / Main content -->
+
+  <div class="grid-container"> <!-- Grid 3 kolum / 3 column grid -->
+
+    <div class="box left-box"> <!-- Kolum kiri / Left column -->
+      <h2>Me 🦖</h2>
+      <p><strong>Name:</strong> Nur Natasya Nabila Binti Khodir</p>
+      <p><strong>Age:</strong> 20</p>
+      <p><strong>Birthplace:</strong> HUSM</p>
+      <p><strong>Date of Birth:</strong> 17 January 2005</p>
+
+      <h3>Quick Links:</h3>
+      <ul>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="education.html">My Family</a></li>
+        <li><a href="gallery.html">My Education</a></li>
+        <li><a href="aboutme.html">My Experience</a></li>
+        <li><a href="education.html">My Friends</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+
+      <h3>Photos:</h3>
+      <img src="profile1.jpg" style="width:100%; border-radius:14px; margin-bottom:12px;"> <!-- Gambar profil / Profile photo -->
+      <img src="profile2.jpg" style="width:100%; border-radius:14px;">
+      <img src="profile3.jpg" style="width:100%; border-radius:14px;">
+    </div>
+
+    <div class="box center-box"> <!-- Kolum tengah / Center column -->
+      <h2>Welcome 💜</h2>
+      <p>Hello and welcome! This blog is a space where I pour my stories, life moments, and the simple things that brighten my days. 🌸✨</p>
+      <img src="mainphoto.jpg" style="width:100%; border-radius:15px; margin-top:15px;">
+      <img src="mainphoto2.jpg" style="width:100%; border-radius:10px; margin-top:10px;">
+    </div>
+
+    <div class="box right-box"> <!-- Kolum kanan / Right column -->
+      <h2>Stay Connected 🦖</h2>
+      <p><strong>WhatsApp:</strong> 
+        <a href="https://wa.me/60137918417" target="_blank" class="btn-link">013-7918417</a>
+      </p>
+      <p><strong>Email:</strong> 
+        <a href="emailto:natasyanabilc17@gmail.com" class="btn-link">natasyanabilc17gmail.com</a>
+      </p>
+
+      <h3>Notes:</h3>
+      <ul>
+        <li>💖 Gallery will be updated soon </li>
+        <li>📝 New blog post coming next week!</li>
+      </ul>
+
+      <h3>Social Media:</h3>
+      <ul>
+        <li><a href="https://instagram.com/@ae.llc" target="_blank" class="btn-link">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@junnnrple" target="_blank" class="btn-link">TikTok</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  
+<div class="bottom-single">
+  <h3>Programming & Web Languages</h3>
+  <p>HTML is used to structure web pages with headings, paragraphs, images, and links.</p>
+  <p>JavaScript adds interactivity to web pages, like animations, buttons, and pop-ups.</p>
+  <p>C++ is a programming language for creating applications, games, and software programs.</p>
+  <p>Python is a versatile programming language, easy to read, used for web development, data analysis, AI, and more.</p>
+  <p>✨✨Thank you for stopping by my blog! I’ll be sharing more updates and photos very soon. ✨✨</p>
+</div>
+
+</main>
+
+<footer>
+  &copy; 2025 This website is for educational purposes only | Nur Natasya Nabila Khodir <!-- Footer text / Teks footer -->
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natasya's Personal Blog | My Favourites</title>
+
+<style>
+
+/* 🌸 BODY BACKGROUND IMAGE */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+
+    background-image: url("7a6d56c5-31dc-4eff-adcd-487f2ca8141c.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* 🌸 HEADER BACKGROUND IMAGE */
+header {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.8);
+
+    background-image: url("header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-bottom: 4px solid rgba(0,0,0,0.2);
+}
+
+/* 🌸 NAVIGATION */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    background-color: #4B0082;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #9370DB;
+    transform: scale(1.05);
+}
+
+/* 🌸 MAIN CONTENT BODY */
+main {
+    flex: 1;
+    background-color: rgba(255,245,251,0.55);
+    margin: 40px auto;
+    width: 85%;
+    max-width: 1000px;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    backdrop-filter: blur(3px);
+}
+
+/* 🌸 TITLE CENTER */
+main h2,
+main p.intro {
+    text-align: center;
+}
+
+/* 🌸 FAVOURITE SECTION BOX (GLASS BLUR) */
+.fav-section {
+    display: flex;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.12); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    margin: 25px 0;
+    padding: 10px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fav-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* 🌸 FIX VIDEO SIZE (NO STRETCH, NO TAJAM) */
+.fav-section video {
+    width: 400px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 15px;
+    background-color: #000;
+    display: block;
+}
+
+/* 🌸 FIX IMAGE SIZE (MATCH VIDEO) */
+.fav-section img {
+    width: 400px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* TEXT AREA */
+.fav-text {
+    padding: 25px;
+    text-align: left;
+}
+
+.fav-text h3 {
+    color: #8A2BE2;
+    margin-top: 0;
+}
+
+.fav-text p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+    background-color: #4B0082;
+    color: #fff;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+}
+
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    .fav-section {
+        flex-direction: column;
+    }
+    .fav-section img,
+    .fav-section video {
+        width: 100%;
+        height: 200px;
+    }
+    .fav-text {
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>🎹 NATASYA'S PERSONAL BLOG🎧</header>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutme.html">About Me</a></li>
+    <li><a href="family.html">Family</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="friends.html">Friends</a></li>
+    <li><a href="favourites.html">Favourites</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h2>💜 My Favourites 💜</h2>
+  <p class="intro">These are my favourite things that make my world brighter and full of joy 🌸</p>
+
+  <div class="fav-section">
+    <video src="music.mp4" controls></video>
+    <div class="fav-text">
+      <h3>🎧 Listening to Music</h3>
+      <p>I can’t live without music — it helps me calm down, express emotions, and stay inspired.</p>
+    </div>
+  </div>
+
+  <div class="fav-section">
+    <img src="chess.jpg" alt="Chess">
+    <div class="fav-text">
+      <h3>♟️ Chess</h3>
+      <p>Chess helps me think logically and stay patient. It’s like solving a mystery with every move.</p>
+    </div>
+  </div>
+
+  <div class="fav-section">
+    <img src="rubik.jpg" alt="Rubik's Cube">
+    <div class="fav-text">
+      <h3>🧩 Rubik’s Cube</h3>
+      <p>It’s fun and satisfying to solve! I can spend hours trying to finish it faster each time.</p>
+    </div>
+  </div>
+
+  <div class="fav-section">
+    <video src="kdrama.mp4" controls></video>
+    <div class="fav-text">
+      <h3>🎬 K-Dramas & Variety Shows</h3>
+      <p>I love stories that make me cry, laugh, and smile.</p>
+    </div>
+  </div>
+
+  <div class="fav-section">
+    <video src="cartoon.mp4" controls></video>
+    <div class="fav-text">
+      <h3>🌈 Cartoons & Animation</h3>
+      <p>I’ve always loved cartoons since I was little! They make me feel young again.</p>
+    </div>
+  </div>
+
+  <div class="fav-section">
+    <video src="dance.mp4" controls></video>
+    <div class="fav-text">
+      <h3>💃 Watching People Dance</h3>
+      <p>I admire dancers — they express emotions through movement.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 This website is for educational purposes only | Nur Natasya Nabila Khodir </p>
+</footer>
+
+</body>
+</html>

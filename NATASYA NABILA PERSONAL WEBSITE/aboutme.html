@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Natasya’s Personal Blog</title> <!-- Nama tab browser / Browser tab name -->
+
+<style>
+
+/* 🌸 BACKGROUND / LATAR */
+body {
+  margin: 0; /* Buang margin default / Remove default margin */
+  padding: 0; /* Buang padding default / Remove default padding */
+  font-family: "Poppins", Arial, sans-serif; /* Font utama laman / Main font */
+  background-image: url("7a6d56c5-31dc-4eff-adcd-487f2ca8141c.png"); /* Gambar latar / Background image */
+  background-size: cover; /* Cover seluruh latar / Cover entire background */
+  background-position: center; /* Tengahkan background / Center position */
+  background-attachment: fixed; /* Background tetap semasa scroll / Fixed during scroll */
+  color: #fff; /* Warna teks putih / White text color */
+  display: flex; /* Flex untuk susunan child / Flex layout for children */
+  flex-direction: column; /* Susun content vertical / Stack content vertically */
+  min-height: 100vh; /* Minimum tinggi 100% viewport / Minimum 100% viewport height */
+  overflow-x: hidden; /* Elak scroll horizontal / Prevent horizontal scroll */
+}
+
+/* 🌧 RAIN EFFECT / EFEK HUJAN */
+#rain {
+  position: fixed; /* Kekal di skrin / Fixed on screen */
+  inset: 0; /* Top, bottom, left, right = 0 / Fill whole screen */
+  pointer-events: none; /* Tidak mengganggu klik / Do not block clicks */
+  overflow: hidden; /* Buang lebihan / Hide overflow */
+  z-index: 1; /* Pastikan berada belakang content / Behind other content */
+}
+.drop {
+  position: absolute; /* Posisi drop individu / Individual drop position */
+  width: 2px; /* Lebar titisan / Drop width */
+  height: 15px; /* Tinggi titisan / Drop height */
+  background: rgba(255,255,255,0.6); /* Warna putih separa telus / Semi-transparent white */
+  filter: blur(1px); /* Blur sedikit / Slight blur */
+  animation: fall linear infinite; /* Animasi jatuh / Falling animation */
+}
+@keyframes fall {
+  from { transform: translateY(-100px); } /* Mulai atas / Start above screen */
+  to { transform: translateY(110vh); } /* Tamat bawah / End below screen */
+}
+
+/* HEADER */
+header {
+  background-image: url("header.jpg"); /* Gambar header / Header image */
+  background-size: cover; 
+  background-position: center;
+  height: 260px; /* Tinggi header / Header height */
+  display: flex;
+  justify-content: center; /* Center horizontal / Horizontal center */
+  align-items: center; /* Center vertical / Vertical center */
+  color: #fff; /* Warna teks putih / White text */
+  text-shadow: 0 0 12px rgba(0,0,0,0.8); /* Shadow teks / Text shadow */
+  font-size: 50px; /* Saiz teks / Font size */
+  font-weight: bold;
+  z-index: 10; /* Pastikan header di depan hujan / Header above rain */
+  position: relative; /* Untuk layer positioning / For positioning */
+  letter-spacing: 2px; /* Spasi huruf / Letter spacing */
+}
+
+/* NAVBAR / MENU */
+nav ul {
+  list-style: none; /* Buang bullet list / Remove bullet points */
+  margin: 0;
+  padding: 15px 0; /* Padding atas-bawah / Top-bottom padding */
+  background: rgba(75, 0, 130, 0.7); /* Latar separa telus / Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur latar belakang / Background blur */
+  display: flex;
+  justify-content: center; /* Center menu / Center menu items */
+  flex-wrap: wrap; /* Wrap jika kurang ruang / Wrap on small screens */
+  z-index: 20; /* Pastikan navbar atas / Navbar above other content */
+}
+nav ul li a {
+  color: white; /* Warna teks link / Link text color */
+  padding: 12px 18px; /* Padding link / Link padding */
+  text-decoration: none; /* Buang underline / Remove underline */
+  font-weight: bold;
+  border-radius: 12px; /* Bulatkan sudut / Rounded corners */
+  transition: 0.3s; /* Smooth hover / Smooth hover transition */
+}
+nav ul li a:hover {
+  background: rgba(147,112,219,0.8); /* Tukar warna bila hover / Change color on hover */
+}
+
+/* MAIN CONTENT / KANDUNGAN UTAMA */
+main {
+  width: 80%; /* Lebar content / Content width */
+  max-width: 900px; /* Maksimum lebar / Maximum width */
+  margin: 40px auto; /* Margin auto untuk center / Center content */
+  display: flex;
+  flex-direction: column; /* Susun vertical / Stack vertically */
+  align-items: center; /* Center horizontal / Center items */
+  z-index: 20; /* Di atas hujan / Above rain */
+  position: relative;
+}
+
+/* PROFILE IMAGE / GAMBAR PROFIL */
+.about-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Pastikan gambar tidak pecah / Cover properly */
+  border-radius: 50%; /* Bulat sempurna / Circle image */
+  display: block;
+  margin-bottom: 25px; /* Jarak bawah / Margin bottom */
+  border: 4px solid rgba(255,255,255,0.6); /* Border semi-transparan / Semi-transparent border */
+  box-shadow: 0 0 18px rgba(255,255,255,0.5); /* Shadow / Box shadow */
+}
+
+/* TEXT BOX / KOTAK TEKS */
+.about-box {
+  background: rgba(255,255,255,0.15); /* Latar separa telus / Semi-transparent background */
+  backdrop-filter: blur(12px); /* Blur background / Blur effect */
+  border-radius: 25px; /* Bulatkan sudut / Rounded corners */
+  padding: 30px 25px; /* Padding / Inner spacing */
+  width: 100%;
+  max-width: 750px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.25); /* Shadow kotak / Box shadow */
+  text-align: center;
+  color: white;
+  font-size: 18px; /* Saiz teks / Font size */
+  line-height: 1.7; /* Jarak baris / Line spacing */
+  animation: fadeIn 1.5s ease; /* Animasi fade-in / Fade-in animation */
+}
+
+h2 {
+  color: #ffe6ff; /* Warna heading / Heading color */
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6); /* Shadow heading / Heading text shadow */
+}
+
+/* FOOTER */
+footer {
+  background: rgba(75, 0, 130, 0.85); /* Latar footer / Footer background */
+  padding: 20px 0; 
+  text-align: center;
+  margin-top: auto;
+  color: white;
+  font-size: 14px;
+}
+
+/* ANIMATIONS / ANIMASI */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); } /* Mula tersembunyi / Start hidden */
+  to { opacity: 1; transform: translateY(0); } /* Tamat muncul / End visible */
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- RAIN EFFECT / EFEK HUJAN -->
+<div id="rain"></div>
+
+<header>🐬ABOUT ME🐬</header> <!-- Header utama / Main header -->
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutme.html">About Me</a></li>
+    <li><a href="family.html">Family</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="friends.html">Friends</a></li>
+    <li><a href="favourites.html">Favourites</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+</nav>
+
+<main>
+  <img src="me.jpg" class="about-img"> <!-- Gambar profil / Profile image -->
+
+  <div class="about-box">
+    <h2>Hello! I’m Nur Natasya Nabila 💜</h2>
+    Hi! I’m 20, an introvert who finds comfort in quiet moments, art, and learning new things. I enjoy discovering opportunities that help me grow and express my creativity.
+    To me, every experience has a lesson, and I try to stay optimistic and dedicated in everything I do — from studying to creating to supporting the people around me.
+    I’m truly excited for what the future holds and how it will shape me. 💛
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 This website is for educational purposes only | Nur Natasya Nabila Khodir <!-- Footer text / Teks footer -->
+</footer>
+
+<script>
+/* RAIN GENERATOR / JANA HUJAN */
+function createRain() {
+  const rain = document.getElementById("rain"); // Ambil div hujan / Get rain div
+  for (let i = 0; i < 90; i++) { // 90 titisan / 90 drops
+    let drop = document.createElement("div"); // Buat div baru / Create new div
+    drop.classList.add("drop"); // Tambah class drop / Add class drop
+    drop.style.left = Math.random() * 100 + "vw"; // Posisi horizontal rawak / Random horizontal position
+    drop.style.animationDuration = (0.6 + Math.random()) + "s"; // Kelajuan rawak / Random speed
+    drop.style.opacity = 0.3 + Math.random() * 0.7; // Opacity rawak / Random opacity
+    rain.appendChild(drop); // Tambah drop ke rain div / Append drop to rain div
+  }
+}
+createRain(); // Call function
+</script>
+
+</body>
+</html>

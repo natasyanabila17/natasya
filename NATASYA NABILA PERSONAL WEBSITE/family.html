@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family | Natasya's Personal Blog</title> <!-- Nama tab / Browser tab name -->
+
+<style>
+/* ===== BACKGROUND / LATAR ===== */
+body {
+    margin: 0; /* Buang margin default / Remove default margin */
+    padding: 0; /* Buang padding default / Remove default padding */
+    font-family: Arial, sans-serif; /* Font utama / Main font */
+
+    background-image: url("7a6d56c5-31dc-4eff-adcd-487f2ca8141c.png"); /* Gambar latar / Background image */
+    background-size: cover; /* Tutup sepenuhnya / Cover entire background */
+    background-position: center; /* Center / Center the image */
+    background-attachment: fixed; /* Kekal semasa scroll / Fixed background */
+
+    display: flex; /* Flex untuk susunan child / Flex layout */
+    flex-direction: column; /* Susun vertical / Stack content vertically */
+    min-height: 100vh; /* Minimum tinggi 100% viewport / Minimum 100% viewport height */
+    overflow-x: hidden; /* Buang scroll horizontal / Prevent horizontal scroll */
+}
+
+/* ===== HEADER / HEADER ===== */
+header {
+    height: 250px; /* Tinggi header / Header height */
+    display: flex;
+    justify-content: center; /* Center horizontal / Horizontal center */
+    align-items: center; /* Center vertical / Vertical center */
+
+    color: white; /* Warna teks / Text color */
+    font-size: 50px; /* Saiz teks / Font size */
+    font-weight: bold; /* Bold text */
+    text-shadow: 0 3px 8px rgba(0,0,0,0.8); /* Shadow teks / Text shadow */
+
+    background-image: url("header.jpg"); /* Gambar header / Header image */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 4px solid rgba(255,255,255,0.3); /* Garisan bawah / Bottom border */
+}
+
+/* ===== NAVBAR / MENU ===== */
+nav ul {
+    list-style: none; /* Buang bullet / Remove bullets */
+    margin: 0;
+    padding: 15px; /* Ruang dalaman / Padding */
+    background-color: #4B0082; /* Warna latar / Background color */
+    display: flex;
+    justify-content: center; /* Center menu / Center items */
+    flex-wrap: wrap; /* Wrap jika kecil skrin / Wrap on small screens */
+}
+nav ul li a {
+    color: white; /* Warna link / Link color */
+    text-decoration: none; /* Buang underline / Remove underline */
+    padding: 10px 16px; /* Padding link / Link padding */
+    font-weight: bold;
+    border-radius: 12px; /* Bulatkan sudut / Rounded corners */
+    transition: 0.3s; /* Smooth hover / Smooth hover transition */
+}
+nav ul li a:hover {
+    background-color: #9370DB; /* Tukar warna bila hover / Hover color */
+}
+
+/* ===== MAIN CONTENT (GLASS) / KANDUNGAN UTAMA ===== */
+main {
+    flex: 1; /* Ambil ruang tinggal supaya footer bawah / Take remaining space */
+    margin: 40px auto; /* Center dan margin / Center content */
+    width: 85%; /* Lebar content / Content width */
+    max-width: 1000px; /* Maksimum lebar / Maximum width */
+
+    background: rgba(255,255,255,0.28); /* Latar glass / Glass effect background */
+    backdrop-filter: blur(10px); /* Blur effect / Blur background */
+    border-radius: 30px; /* Bulat sudut / Rounded corners */
+    padding: 40px; /* Padding dalam kotak / Inner padding */
+    text-align: center; /* Center text / Text alignment */
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15); /* Shadow kotak / Box shadow */
+    border: 1px solid rgba(255,255,255,0.35); /* Border semi-transparan / Semi-transparent border */
+
+    position: relative; /* Position relative / Relative position */
+    z-index: 100; /* Supaya di atas background / On top of background */
+}
+
+main h2 {
+    color: #222; /* Warna heading / Heading color */
+    font-size: 30px; /* Saiz heading / Heading size */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Shadow heading / Text shadow */
+}
+main p {
+    color: #333; /* Warna teks / Text color */
+    font-size: 18px; /* Saiz teks / Text size */
+    display: inline-block;
+    padding: 12px 20px; /* Padding dalam box / Inner padding */
+    background: rgba(255,255,255,0.35); /* Latar separa telus / Semi-transparent background */
+    border-radius: 15px; /* Bulat sudut / Rounded corners */
+}
+
+/* ===== FAMILY GALLERY / GALERI KELUARGA ===== */
+.family-gallery {
+    display: flex; /* Flex untuk susun item / Flex layout */
+    flex-wrap: wrap; /* Wrap jika kurang ruang / Wrap on small screens */
+    justify-content: center; /* Center content / Center gallery */
+    gap: 25px; /* Jarak antara item / Gap between items */
+}
+.family-item {
+    width: 220px; /* Lebar setiap kotak / Box width */
+    background: rgba(255,255,255,0.40); /* Latar glass / Glass background */
+    backdrop-filter: blur(8px); /* Blur effect / Background blur */
+    padding: 18px;
+    border-radius: 20px; /* Bulat sudut / Rounded corners */
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.4); /* Border semi-transparan / Semi-transparent border */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Shadow / Box shadow */
+    transition: 0.3s; /* Smooth hover / Smooth transition */
+}
+.family-item:hover {
+    transform: translateY(-6px); /* Hover effect naik / Move up on hover */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25); /* Shadow lebih jelas / Stronger shadow */
+}
+.family-item img {
+    width: 100%; /* Lebar penuh / Full width */
+    height: 210px; /* Tinggi gambar / Image height */
+    object-fit: cover; /* Jangan pecah gambar / Cover image properly */
+    border-radius: 15px; /* Bulat sudut / Rounded corners */
+    margin-bottom: 12px; /* Jarak bawah / Bottom margin */
+}
+
+/* ===== FOOTER / PENGAKHIR ===== */
+footer {
+    background-color: #4B0082; /* Warna footer / Footer background */
+    color: white; /* Warna teks / Text color */
+    padding: 20px; /* Padding / Inner spacing */
+    text-align: center; /* Center text / Text alignment */
+    z-index: 100; /* Pastikan di atas / On top */
+    position: relative;
+}
+</style>
+</head>
+
+<body>
+
+<header>🦖 NATASYA'S PERSONAL BLOG 🦖</header> <!-- Header utama / Main header -->
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutme.html">About Me</a></li>
+    <li><a href="family.html">Family</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="friends.html">Friends</a></li>
+    <li><a href="favourites.html">Favourites</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+</nav>
+
+<main>
+  <h2>💜 MY FAMILY 💜</h2> <!-- Main heading -->
+  <p>My Parents and Siblings.</p> <!--  Short description -->
+
+  <div class="family-gallery"> <!-- Flex gallery -->
+    <div class="family-item"> <!-- Satu item keluarga / One family member -->
+      <img src="father.jpg" alt="Father"> <!-- Gambar ayah / Father image -->
+      <p>My Father 👨‍🦱</p> <!-- Caption  -->
+    </div>
+    
+    <div class="family-item">
+      <img src="mother.jpg" alt="Mother">
+      <p>My Mother 👩‍🦱</p>
+    </div>
+
+    <div class="family-item">
+      <img src="sibling1.jpg" alt="Sibling 1">
+      <p>Older Brother 💙</p>
+    </div>
+
+    <div class="family-item">
+      <img src="sibling2.jpg" alt="Sibling 2">
+      <p>Older Sister 💜</p>
+    </div>
+
+    <div class="family-item">
+      <img src="sibling3.jpg" alt="Sibling 3">
+      <p>Older Sister 💖</p>
+    </div>
+
+    <div class="family-item">
+      <img src="sibling4.jpg" alt="Sibling 4">
+      <p>Younger Sister 💛</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 This website is for educational purposes only | Nur Natasya Nabila Khodir <!-- Footer text / Teks footer -->
+</footer>
+
+</body>
+</html>

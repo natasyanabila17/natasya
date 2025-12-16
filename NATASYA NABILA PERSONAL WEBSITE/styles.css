@@ -1,0 +1,85 @@
+/* General Styling*/
+body {
+	font-family:Arial, sans-serif;
+	background-color:#E6E6FA;
+	margin:0;
+	padding:0;
+}
+
+/*Heading*/
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #4B0082; /* purple */
+  margin: 0; /* remove white space around */
+  padding: 20px 0; /* vertical padding only */
+  width: 100%; /* full width */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* optional shadow */
+}
+
+/*Navigaton bar*/
+nav {
+  background: #9966CC; /*fixed spelling (was 'backgorund') */
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto; /*adds space above and below navbar */
+  padding: 10px 20px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 22px;
+}
+
+
+
+nav > a {
+	color: black;
+	text-decoration:none;
+	padding: 8px 16px;
+	border-radius: 22px;
+	transition: background 0.25s,color 0.25s;
+
+}
+
+nav > a:hover{
+	background: rgb(56,130,209);
+	color:white;
+}
+
+/*Website content*/
+.content  {
+	background: white;
+	color: black;
+	width: 80%;
+	max-width: 800px;
+	margin: 40px auto;
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+	text-align: center;
+}
+
+.content h2 {
+	margin-bottom: 15px;
+	color: rgb(56,130,209);
+}
+
+/*Footer Styling*/
+.footer{
+	background:#111;
+	color:#ddd;
+	text-align:center;
+	padding:15px 0;
+	bottom:0;
+	left:0;
+	width:100%;
+	border-top: 3px solid rgb(56,130,209);
+	font-size:0.3cm;
+	box-shadow:0 -2px 10px rgba(0,0,0,0.3);
+	position: fixed;
+
+}
+
+.footer p{
+	margin:0;
+}
